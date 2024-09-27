@@ -3,6 +3,7 @@ FROM python:3.11
 WORKDIR /code
 
 COPY src/stdash/main.py /code/
+COPY src/stdash/pages /code/pages
 
 # 필요한 패키지 설치
 
