@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from app import load_data
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.markdown("# Page 2 ")
 st.sidebar.markdown("# Page 2 ")
@@ -26,3 +27,11 @@ ax.pie(dif_user['count'], labels=dif_user['request_user'], autopct='%1.1f%%', st
 ax.set_title('Users experiencing processing problems')
 
 st.pyplot(fig)
+
+
+# Plotly 파이 차트 그리기
+fig = px.pie(dif_user, values='count', names='request_user', title='Users experiencing processing problems', 
+             color_discrete_sequence=px.colors.sequential.RdBu, hole=0.3,)
+
+# Streamlit을 통해 차트 표시
+st.plotly_chart(fig)

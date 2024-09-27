@@ -3,6 +3,7 @@ import pandas as pd
 from app import load_data
 import matplotlib.pyplot as plt
 
+
 st.markdown("# Page 1 ")
 st.sidebar.markdown("# Page 1")
 
@@ -27,3 +28,11 @@ plt.tight_layout()
 
 # Streamlit을 통해 차트 표시
 st.pyplot(fig)
+
+# request_time을 인덱스로 설정
+df_time.set_index('request_time', inplace=True)
+
+# st.bar_chart를 사용하여 막대 그래프 그리기
+st.bar_chart(df_time['count'])
+
+
