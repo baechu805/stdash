@@ -8,4 +8,4 @@ COPY src/stdash/main.py /code/
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/baechu805/stdash@0.1/dash
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+CMD ["streamlit", "run", "main.py", "--server.port=8080", "--server.address=0.0.0.0"]
